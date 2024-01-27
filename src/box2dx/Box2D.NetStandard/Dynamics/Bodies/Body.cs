@@ -59,6 +59,7 @@ namespace Box2D.NetStandard.Dynamics.Bodies
         internal float m_invMass;
 
         internal int m_islandIndex;
+        public int GetIslandIndex() => m_islandIndex;
 
         internal JointEdge m_jointList;
 

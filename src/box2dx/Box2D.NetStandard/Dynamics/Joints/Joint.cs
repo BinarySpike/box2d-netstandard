@@ -204,15 +204,15 @@ namespace Box2D.NetStandard.Dynamics.Joints
                 WheelJointDef d     => new WheelJoint(d),
                 WeldJointDef d      => new WeldJoint(d),
 				FrictionJointDef d  => new FrictionJoint(d),
-                _ => throw new NotImplementedException($"JointDef '{def.GetType().Name}' is not implemented.")
+                _ => def.CreateJoint()
             };
 		}
 
-		internal abstract void InitVelocityConstraints(in SolverData data);
-		internal abstract void SolveVelocityConstraints(in SolverData data);
+		protected internal abstract void InitVelocityConstraints(in SolverData data);
+		protected internal abstract void SolveVelocityConstraints(in SolverData data);
 
 		// This returns true if the position errors are within tolerance.
-		internal abstract bool SolvePositionConstraints(in SolverData data);
+		protected internal abstract bool SolvePositionConstraints(in SolverData data);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal void ComputeXForm(ref Transform xf, Vector2 center, Vector2 localCenter, float angle)

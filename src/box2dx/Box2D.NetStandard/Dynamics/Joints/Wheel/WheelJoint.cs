@@ -298,7 +298,7 @@ namespace Box2D.NetStandard.Dynamics.Joints.Wheel
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private float GetDamping() => m_damping;
 
-		internal override void InitVelocityConstraints(in SolverData data)
+		protected internal override void InitVelocityConstraints(in SolverData data)
 		{
 			m_indexA = m_bodyA.m_islandIndex;
 			m_indexB = m_bodyB.m_islandIndex;
@@ -446,7 +446,7 @@ namespace Box2D.NetStandard.Dynamics.Joints.Wheel
 			data.velocities[m_indexB].w = wB;
 		}
 
-		internal override void SolveVelocityConstraints(in SolverData data)
+		protected internal override void SolveVelocityConstraints(in SolverData data)
 		{
 			float mA = m_invMassA, mB = m_invMassB;
 			float iA = m_invIA, iB = m_invIB;
@@ -553,7 +553,7 @@ namespace Box2D.NetStandard.Dynamics.Joints.Wheel
 			data.velocities[m_indexB].w = wB;
 		}
 
-		internal override bool SolvePositionConstraints(in SolverData data)
+		protected internal override bool SolvePositionConstraints(in SolverData data)
 		{
 			Vector2 cA = data.positions[m_indexA].c;
 			float aA = data.positions[m_indexA].a;

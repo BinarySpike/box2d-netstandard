@@ -33,7 +33,7 @@ namespace Box2D.NetStandard.Collision
     /// <summary>
     ///  This is used to compute the current state of a contact manifold.
     /// </summary>
-    internal class WorldManifold
+    public class WorldManifold
     {
         private readonly float[] separations = new float[Settings.MaxManifoldPoints];
 
@@ -45,7 +45,7 @@ namespace Box2D.NetStandard.Collision
         /// <summary>
         ///  World contact point (point of intersection).
         /// </summary>
-        internal Vector2[] points = new Vector2[Settings.MaxManifoldPoints];
+        public Vector2[] points = new Vector2[Settings.MaxManifoldPoints];
 
         /// Evaluate the manifold with supplied transforms. This assumes
         /// modest motion from the original state. This does not change the

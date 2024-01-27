@@ -34,5 +34,7 @@ namespace Box2D.NetStandard.Dynamics.Joints
             bodyB = null;
             collideConnected = false;
         }
+
+        public virtual Joint? CreateJoint() => null;
     }
 }

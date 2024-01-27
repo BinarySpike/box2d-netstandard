@@ -196,10 +196,10 @@ namespace Box2D.NetStandard.Dynamics.Contacts
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal Manifold GetManifold() => m_manifold;
+        public Manifold GetManifold() => m_manifold;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal void GetWorldManifold(out WorldManifold worldManifold)
+        public void GetWorldManifold(out WorldManifold worldManifold)
         {
             Body bodyA = m_fixtureA.Body;
             Body bodyB = m_fixtureB.Body;

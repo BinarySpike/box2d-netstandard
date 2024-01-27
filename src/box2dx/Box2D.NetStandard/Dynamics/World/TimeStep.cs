@@ -27,13 +27,13 @@
 
 namespace Box2D.NetStandard.Dynamics.World
 {
-    internal struct TimeStep
+    public struct TimeStep
     {
-        internal float dt;      // time step
-        internal float inv_dt;  // inverse time step (0 if dt == 0).
-        internal float dtRatio; // dt * inv_dt0
-        internal int velocityIterations;
-        internal int positionIterations;
-        internal bool warmStarting;
+        public float dt;      // time step
+        public float inv_dt;  // inverse time step (0 if dt == 0).
+        public float dtRatio; // dt * inv_dt0
+        public int velocityIterations;
+        public int positionIterations;
+        public bool warmStarting;
     }
 }

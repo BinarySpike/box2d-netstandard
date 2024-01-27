@@ -100,7 +100,7 @@ namespace Box2D.NetStandard.Dynamics.Joints.Mouse
             m_targetA = target;
         }
 
-        internal override void InitVelocityConstraints(in SolverData data)
+        protected internal override void InitVelocityConstraints(in SolverData data)
         {
             m_indexB = m_bodyB.m_islandIndex;
             m_localCenterB = m_bodyB.m_sweep.localCenter;
@@ -175,7 +175,7 @@ namespace Box2D.NetStandard.Dynamics.Joints.Mouse
             data.velocities[m_indexB].w = wB;
         }
 
-        internal override void SolveVelocityConstraints(in SolverData data)
+        protected internal override void SolveVelocityConstraints(in SolverData data)
         {
             Vector2 vB = data.velocities[m_indexB].v;
             float wB = data.velocities[m_indexB].w;
@@ -203,6 +203,6 @@ namespace Box2D.NetStandard.Dynamics.Joints.Mouse
             data.velocities[m_indexB].w = wB;
         }
 
-        internal override bool SolvePositionConstraints(in SolverData data) => true;
+        protected internal override bool SolvePositionConstraints(in SolverData data) => true;
     }
 }

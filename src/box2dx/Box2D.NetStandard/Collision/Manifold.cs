@@ -37,12 +37,12 @@ namespace Box2D.NetStandard.Collision
     [DebuggerDisplay("localNormal = {" + nameof(localNormal) + "}")]
     public class Manifold
     {
-        internal Vector2 localNormal;
+        public Vector2 localNormal;
 
         /// <summary>
         ///  Usage depends on manifold type.
         /// </summary>
-        internal Vector2 localPoint;
+        public Vector2 localPoint;
 
         /// <summary>
         ///  The number of manifold points.
